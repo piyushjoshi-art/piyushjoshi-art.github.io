@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About Us | Royal Bites</title>
-<meta name="description" content="Learn about Royal Bites, our story, values, chefs and passion for great food.">
+<title>Gallery | Royal Bites</title>
+<meta name="description" content="Explore the Royal Bites food, restaurant ambience and dessert gallery.">
 
 <style>
 
@@ -76,8 +76,8 @@ nav{
     text-align:center;
     padding:80px 20px;
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
-    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85");
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.82)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85");
     background-size:cover;
     background-position:center;
 }
@@ -96,180 +96,109 @@ nav{
     font-size:18px;
 }
 
-/* STORY */
+/* GALLERY */
 
-.story{
-    padding:90px 7%;
-}
-
-.story-grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:55px;
-    align-items:center;
-}
-
-.story-image img{
-    width:100%;
-    height:500px;
-    object-fit:cover;
-    border-radius:20px;
-}
-
-.story-content h2{
-    color:#d4af37;
-    font-size:40px;
-    margin-bottom:20px;
-}
-
-.story-content p{
-    color:#aaa;
-    margin-bottom:18px;
-}
-
-.gold-line{
-    width:70px;
-    height:3px;
-    background:#d4af37;
-    margin-bottom:25px;
-}
-
-/* VALUES */
-
-.values{
-    padding:90px 7%;
-    background:#0d0d0d;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.section-title h2{
-    color:#d4af37;
-    font-size:40px;
-    margin-bottom:10px;
-}
-
-.section-title p{
-    color:#888;
-}
-
-.value-grid{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.value-card{
-    background:#191919;
-    padding:35px 25px;
-    text-align:center;
-    border-radius:18px;
-    border:1px solid #292929;
-    transition:.3s;
-}
-
-.value-card:hover{
-    transform:translateY(-7px);
-    border-color:#d4af37;
-}
-
-.value-icon{
-    font-size:38px;
-    margin-bottom:15px;
-}
-
-.value-card h3{
-    color:#fff;
-    margin-bottom:10px;
-}
-
-.value-card p{
-    color:#999;
-}
-
-/* CHEF */
-
-.chef{
-    padding:90px 7%;
-}
-
-.chef-grid{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
-}
-
-.chef-image img{
-    width:100%;
-    height:450px;
-    object-fit:cover;
-    border-radius:20px;
-}
-
-.chef-content h2{
-    color:#d4af37;
-    font-size:38px;
-    margin-bottom:18px;
-}
-
-.chef-content h3{
-    margin-bottom:18px;
-}
-
-.chef-content p{
-    color:#aaa;
-    margin-bottom:15px;
-}
-
-/* STATS */
-
-.stats{
-    background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
-    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85");
-    background-size:cover;
-    background-position:center;
+.gallery-section{
     padding:80px 7%;
 }
 
-.stats-grid{
-    max-width:1100px;
+/* FILTERS */
+
+.filters{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:40px;
+}
+
+.filter-btn{
+    background:#191919;
+    color:#ddd;
+    border:1px solid #333;
+    padding:10px 22px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#d4af37;
+    color:#111;
+    border-color:#d4af37;
+}
+
+/* GRID */
+
+.gallery-grid{
+    max-width:1300px;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:20px;
-    text-align:center;
+    gap:18px;
 }
 
-.stat h2{
+.gallery-item{
+    position:relative;
+    height:270px;
+    overflow:hidden;
+    border-radius:15px;
+    cursor:pointer;
+    background:#191919;
+    border:1px solid #292929;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    opacity:0;
+    transition:.3s;
+}
+
+.gallery-overlay h3{
+    color:#fff;
+    font-size:20px;
+}
+
+.gallery-overlay p{
     color:#d4af37;
-    font-size:40px;
+    font-size:14px;
 }
 
-.stat p{
-    color:#ddd;
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-item:hover .gallery-overlay{
+    opacity:1;
 }
 
 /* CTA */
 
 .cta{
     text-align:center;
-    padding:90px 7%;
+    padding:80px 7%;
+    background:#0d0d0d;
 }
 
 .cta h2{
+    color:#d4af37;
     font-size:40px;
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .cta p{
@@ -292,6 +221,43 @@ nav{
 .btn:hover{
     background:#fff;
     transform:translateY(-3px);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:25px;
+}
+
+.lightbox.show{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:85vh;
+    border-radius:12px;
+    box-shadow:0 10px 50px rgba(0,0,0,.7);
+}
+
+.close{
+    position:absolute;
+    top:25px;
+    right:35px;
+    font-size:40px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.close:hover{
+    color:#d4af37;
 }
 
 /* FOOTER */
@@ -343,12 +309,12 @@ footer p{
     justify-content:center;
     text-decoration:none;
     font-size:24px;
-    z-index:999;
+    z-index:1500;
 }
 
 /* TABLET */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
     .nav-links{
         gap:12px;
@@ -358,18 +324,8 @@ footer p{
         font-size:12px;
     }
 
-    .story-grid,
-    .chef-grid{
-        grid-template-columns:1fr;
-    }
-
-    .value-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .stats-grid{
-        grid-template-columns:1fr 1fr;
-        gap:35px;
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
@@ -402,38 +358,49 @@ footer p{
         font-size:15px;
     }
 
-    .story,
-    .values,
-    .chef,
+    .gallery-section{
+        padding:60px 5%;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .gallery-item{
+        height:190px;
+    }
+
+    .gallery-overlay{
+        opacity:1;
+        background:linear-gradient(
+            transparent,
+            rgba(0,0,0,.75)
+        );
+        justify-content:flex-end;
+        align-items:flex-start;
+        padding:12px;
+    }
+
+    .gallery-overlay h3{
+        font-size:15px;
+    }
+
+    .gallery-overlay p{
+        font-size:12px;
+    }
+
+    .close{
+        top:15px;
+        right:20px;
+        font-size:35px;
+    }
+
     .cta{
         padding:65px 5%;
     }
 
-    .story-content h2,
-    .chef-content h2,
-    .section-title h2,
     .cta h2{
-        font-size:30px;
-    }
-
-    .story-image img,
-    .chef-image img{
-        height:350px;
-    }
-
-    .value-grid{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        padding:65px 5%;
-    }
-
-    .stats-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .stat h2{
         font-size:30px;
     }
 
@@ -464,11 +431,11 @@ Royal Bites
 </li>
 
 <li>
-<a href="about.html" class="active">About</a>
+<a href="about.html">About</a>
 </li>
 
 <li>
-<a href="gallery.html">Gallery</a>
+<a href="gallery.html" class="active">Gallery</a>
 </li>
 
 <li>
@@ -491,11 +458,11 @@ Royal Bites
 <div>
 
 <h1>
-Our <span>Story</span>
+Our <span>Gallery</span>
 </h1>
 
 <p>
-Passion, tradition and unforgettable flavours.
+A glimpse of our food, ambience and special moments.
 </p>
 
 </div>
@@ -503,199 +470,211 @@ Passion, tradition and unforgettable flavours.
 </section>
 
 
-<!-- STORY -->
+<!-- GALLERY -->
 
-<section class="story">
+<section class="gallery-section">
 
-<div class="story-grid">
 
-<div class="story-image">
+<!-- FILTERS -->
 
-<img
-src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=85"
-alt="Royal Bites restaurant"
+<div class="filters">
+
+<button
+class="filter-btn active"
+onclick="filterGallery('all',this)">
+All
+</button>
+
+<button
+class="filter-btn"
+onclick="filterGallery('food',this)">
+Food
+</button>
+
+<button
+class="filter-btn"
+onclick="filterGallery('restaurant',this)">
+Restaurant
+</button>
+
+<button
+class="filter-btn"
+onclick="filterGallery('dessert',this)">
+Desserts
+</button>
+
+</div>
+
+
+<!-- GALLERY GRID -->
+
+<div class="gallery-grid">
+
+
+<div
+class="gallery-item"
+data-category="restaurant"
+onclick="openLightbox(this)"
 >
 
-</div>
-
-
-<div class="story-content">
-
-<div class="gold-line"></div>
-
-<h2>More Than Just A Restaurant</h2>
-
-<p>
-Royal Bites was created with one simple idea —
-to bring delicious food, beautiful ambience and warm hospitality
-together under one roof.
-</p>
-
-<p>
-From carefully selected ingredients to thoughtfully prepared dishes,
-every detail is designed to make your visit special.
-</p>
-
-<p>
-Whether you're enjoying a family dinner, celebrating a special
-occasion or simply meeting friends, Royal Bites is a place where
-great memories are made.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- VALUES -->
-
-<section class="values">
-
-<div class="section-title">
-
-<h2>What We Believe In</h2>
-
-<p>
-The values behind everything we serve.
-</p>
-
-</div>
-
-
-<div class="value-grid">
-
-
-<div class="value-card">
-
-<div class="value-icon">🥬</div>
-
-<h3>Fresh Ingredients</h3>
-
-<p>
-We believe great food starts with fresh and carefully selected
-ingredients.
-</p>
-
-</div>
-
-
-<div class="value-card">
-
-<div class="value-icon">👨‍🍳</div>
-
-<h3>Authentic Recipes</h3>
-
-<p>
-Our recipes combine traditional flavours with a modern dining
-experience.
-</p>
-
-</div>
-
-
-<div class="value-card">
-
-<div class="value-icon">❤️</div>
-
-<h3>Guest First</h3>
-
-<p>
-Every guest deserves delicious food, friendly service and a
-memorable experience.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- CHEF -->
-
-<section class="chef">
-
-<div class="chef-grid">
-
-
-<div class="chef-image">
-
 <img
-src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1200&q=85"
-alt="Royal Bites chef"
+src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+alt="Restaurant interior"
 >
 
-</div>
+<div class="gallery-overlay">
 
-
-<div class="chef-content">
-
-<div class="gold-line"></div>
-
-<h2>Meet Our Chef</h2>
-
-<h3>Chef Arjun Sharma</h3>
-
-<p>
-With years of experience and a passion for creating memorable
-dishes, Chef Arjun brings creativity and tradition together in
-every plate.
-</p>
-
-<p>
-His philosophy is simple: use quality ingredients, respect the
-recipe and let the natural flavours shine.
-</p>
+<h3>Restaurant Ambience</h3>
+<p>Restaurant</p>
 
 </div>
 
 </div>
 
-</section>
 
+<div
+class="gallery-item"
+data-category="food"
+onclick="openLightbox(this)"
+>
 
-<!-- STATS -->
+<img
+src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=85"
+alt="Delicious food"
+>
 
-<section class="stats">
+<div class="gallery-overlay">
 
-<div class="stats-grid">
+<h3>Signature Dish</h3>
+<p>Food</p>
 
-
-<div class="stat">
-
-<h2>10+</h2>
-
-<p>Years of Experience</p>
+</div>
 
 </div>
 
 
-<div class="stat">
+<div
+class="gallery-item"
+data-category="food"
+onclick="openLightbox(this)"
+>
 
-<h2>50K+</h2>
+<img
+src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85"
+alt="Restaurant food"
+>
 
-<p>Happy Guests</p>
+<div class="gallery-overlay">
+
+<h3>Chef's Special</h3>
+<p>Food</p>
+
+</div>
 
 </div>
 
 
-<div class="stat">
+<div
+class="gallery-item"
+data-category="dessert"
+onclick="openLightbox(this)"
+>
 
-<h2>40+</h2>
+<img
+src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1000&q=85"
+alt="Dessert"
+>
 
-<p>Signature Dishes</p>
+<div class="gallery-overlay">
+
+<h3>Sweet Treat</h3>
+<p>Desserts</p>
+
+</div>
 
 </div>
 
 
-<div class="stat">
+<div
+class="gallery-item"
+data-category="restaurant"
+onclick="openLightbox(this)"
+>
 
-<h2>4.9★</h2>
+<img
+src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=85"
+alt="Restaurant dining"
+>
 
-<p>Guest Rating</p>
+<div class="gallery-overlay">
+
+<h3>Elegant Dining</h3>
+<p>Restaurant</p>
+
+</div>
+
+</div>
+
+
+<div
+class="gallery-item"
+data-category="food"
+onclick="openLightbox(this)"
+>
+
+<img
+src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=1000&q=85"
+alt="Paneer dish"
+>
+
+<div class="gallery-overlay">
+
+<h3>Paneer Tikka</h3>
+<p>Food</p>
+
+</div>
+
+</div>
+
+
+<div
+class="gallery-item"
+data-category="dessert"
+onclick="openLightbox(this)"
+>
+
+<img
+src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85"
+alt="Chocolate cake"
+>
+
+<div class="gallery-overlay">
+
+<h3>Signature Cake</h3>
+<p>Desserts</p>
+
+</div>
+
+</div>
+
+
+<div
+class="gallery-item"
+data-category="restaurant"
+onclick="openLightbox(this)"
+>
+
+<img
+src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85"
+alt="Restaurant interior"
+>
+
+<div class="gallery-overlay">
+
+<h3>Dining Experience</h3>
+<p>Restaurant</p>
+
+</div>
 
 </div>
 
@@ -709,11 +688,10 @@ recipe and let the natural flavours shine.
 
 <section class="cta">
 
-<h2>Ready For A Delicious Experience?</h2>
+<h2>Hungry Yet?</h2>
 
 <p>
-Explore our menu or reserve your table and discover what makes
-Royal Bites special.
+Explore our complete menu and discover your next favourite dish.
 </p>
 
 <a href="menu.html" class="btn">
@@ -725,6 +703,25 @@ Reserve Table
 </a>
 
 </section>
+
+
+<!-- LIGHTBOX -->
+
+<div
+class="lightbox"
+id="lightbox"
+onclick="closeLightbox(event)"
+>
+
+<span
+class="close"
+onclick="closeLightbox(event)">
+&times;
+</span>
+
+<img id="lightboxImage" src="" alt="Gallery preview">
+
+</div>
 
 
 <!-- FOOTER -->
@@ -758,11 +755,98 @@ Royal Bites
 <a
 href="https://wa.me/919999999999"
 class="whatsapp"
-target="_blank"
->
+target="_blank">
 ☎
 </a>
 
+
+<script>
+
+/* FILTER GALLERY */
+
+function filterGallery(category, button){
+
+    let items =
+    document.querySelectorAll(".gallery-item");
+
+    let buttons =
+    document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(function(btn){
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    items.forEach(function(item){
+
+        if(
+            category === "all" ||
+            item.dataset.category === category
+        ){
+
+            item.style.display = "block";
+
+        }else{
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* LIGHTBOX */
+
+function openLightbox(item){
+
+    let image =
+    item.querySelector("img");
+
+    document.getElementById("lightboxImage").src =
+    image.src;
+
+    document.getElementById("lightbox").classList.add("show");
+
+}
+
+
+function closeLightbox(event){
+
+    if(
+        event.target.id === "lightbox" ||
+        event.target.classList.contains("close")
+    ){
+
+        document
+        .getElementById("lightbox")
+        .classList.remove("show");
+
+    }
+
+}
+
+
+/* ESC KEY */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            document
+            .getElementById("lightbox")
+            .classList.remove("show");
+
+        }
+
+    }
+);
+
+</script>
 
 </body>
 </html>

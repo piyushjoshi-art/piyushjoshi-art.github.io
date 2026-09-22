@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Royal Bites | Premium Restaurant</title>
+  <meta name="description" content="Royal Bites - Authentic flavours, premium dining and unforgettable food experiences.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #0b0b0b;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #d8a84e;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #d8a84e;
+    }
+
+    .nav-btn {
+      background: #d8a84e;
+      color: #111;
+      padding: 11px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 7% 70px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.35)),
+        url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .eyebrow {
+      color: #d8a84e;
+      font-family: Arial, sans-serif;
+      letter-spacing: 3px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(50px, 7vw, 92px);
+      line-height: .98;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #d8a84e;
+    }
+
+    .hero p {
+      font-family: Arial, sans-serif;
+      color: #ddd;
+      max-width: 540px;
+      margin-bottom: 35px;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 30px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .primary {
+      background: #d8a84e;
+      color: #111;
+    }
+
+    .secondary {
+      border: 1px solid #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* GENERAL */
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(35px, 5vw, 55px);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #aaa;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #f5f1e8;
+      color: #151515;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 500px;
+      border-radius: 20px;
+      background:
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    .about-text h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-family: Arial, sans-serif;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .feature {
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .feature small {
+      color: #777;
+      font-family: Arial, sans-serif;
+    }
+
+    /* MENU */
+    .menu {
+      background: #0b0b0b;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .dish {
+      background: #151515;
+      border: 1px solid #262626;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .dish:hover {
+      transform: translateY(-7px);
+      border-color: #d8a84e;
+    }
+
+    .dish-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .dish-info {
+      padding: 22px;
+    }
+
+    .dish-info h3 {
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .dish-info p {
+      color: #999;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #d8a84e;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* OFFER */
+    .offer {
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .offer h2 {
+      font-size: clamp(38px, 6vw, 70px);
+      margin-bottom: 15px;
+    }
+
+    .offer p {
+      color: #ddd;
+      font-family: Arial, sans-serif;
+      margin-bottom: 30px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: #f5f1e8;
+      color: #111;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 270px;
+      border-radius: 15px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-item:nth-child(1) {
+      background-image: url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .gallery-item:nth-child(2) {
+      background-image: url("https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .gallery-item:nth-child(3) {
+      background-image: url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .gallery-item:nth-child(4) {
+      background-image: url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=85");
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #111;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-card {
+      background: #181818;
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid #292929;
+    }
+
+    .contact-card h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .contact-card p {
+      font-family: Arial, sans-serif;
+      color: #aaa;
+      margin: 12px 0;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 15px;
+      background: #25d366;
+      color: #fff;
+      padding: 13px 22px;
+      border-radius: 30px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      padding: 50px 7% 25px;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+    footer .logo {
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #777;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, 

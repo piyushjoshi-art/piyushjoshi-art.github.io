@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Royal Bites</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:#0b0b0b;
+  color:#fff;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 7%;
+  background:rgba(0,0,0,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #292929;
+}
+
+.logo{
+  color:#d8a84e;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logo span{
+  display:block;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+.back{
+  font-family:Arial,sans-serif;
+  border:1px solid #555;
+  padding:10px 18px;
+  border-radius:25px;
+}
+
+.back:hover{
+  color:#d8a84e;
+  border-color:#d8a84e;
+}
+
+/* HERO */
+
+.hero{
+  min-height:65vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 7%;
+  background:
+  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
+  url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
+  center/cover;
+}
+
+.hero small{
+  color:#d8a84e;
+  font-family:Arial,sans-serif;
+  letter-spacing:4px;
+}
+
+.hero h1{
+  font-size:clamp(50px,7vw,90px);
+  margin:15px 0;
+}
+
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:#ccc;
+  font-family:Arial,sans-serif;
+}
+
+/* STORY */
+
+.story{
+  background:#f5f1e8;
+  color:#111;
+  padding:100px 7%;
+}
+
+.story-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns

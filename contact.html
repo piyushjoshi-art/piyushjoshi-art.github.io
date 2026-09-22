@@ -5,387 +5,417 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Contact Us | Royal Bites</title>
+<meta name="description" content="Contact Royal Bites for reservations, enquiries, location and opening hours.">
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-  background:#0b0b0b;
-  color:#fff;
-  font-family:Arial,sans-serif;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
+    background:#111;
+    color:#fff;
+    line-height:1.6;
 }
 
 /* NAVBAR */
 
 nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 7%;
-  background:rgba(0,0,0,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid #292929;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(15,15,15,.96);
+    backdrop-filter:blur(10px);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(212,175,55,.2);
 }
 
 .logo{
-  font-family:Georgia,"Times New Roman",serif;
-  color:#d8a84e;
-  font-size:25px;
-  font-weight:bold;
+    color:#d4af37;
+    text-decoration:none;
+    font-size:25px;
+    font-weight:bold;
 }
 
-.logo span{
-  display:block;
-  color:#fff;
-  font-family:Arial,sans-serif;
-  font-size:9px;
-  letter-spacing:3px;
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
 }
 
-.back{
-  border:1px solid #555;
-  padding:10px 18px;
-  border-radius:25px;
-  transition:.3s;
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
 }
 
-.back:hover{
-  color:#d8a84e;
-  border-color:#d8a84e;
+.nav-links a:hover,
+.nav-links .active{
+    color:#d4af37;
 }
 
 /* HERO */
 
 .hero{
-  min-height:45vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:80px 7%;
-
-  background:
-  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.82)),
-  url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
-  center/cover;
-}
-
-.hero small{
-  color:#d8a84e;
-  letter-spacing:4px;
+    min-height:55vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
 }
 
 .hero h1{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(50px,7vw,80px);
-  margin:15px 0;
+    font-size:58px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#d4af37;
 }
 
 .hero p{
-  color:#ccc;
+    color:#ddd;
+    font-size:18px;
 }
 
-/* CONTACT */
+/* MAIN */
 
-.contact{
-  background:#f5f1e8;
-  color:#111;
-  padding:90px 7%;
+.contact-section{
+    padding:80px 7%;
 }
 
 .contact-grid{
-  max-width:1150px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
 }
 
-/* LEFT */
+/* INFO */
 
-.contact-info small{
-  color:#9b7124;
-  letter-spacing:3px;
+.contact-info{
+    background:#191919;
+    padding:35px;
+    border-radius:18px;
+    border:1px solid #292929;
 }
 
 .contact-info h2{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:50px;
-  line-height:1.05;
-  margin:15px 0 25px;
+    color:#d4af37;
+    margin-bottom:25px;
 }
 
-.contact-info > p{
-  color:#666;
-  line-height:1.7;
-  margin-bottom:30px;
+.info-box{
+    margin-bottom:25px;
 }
 
-.info-item{
-  display:flex;
-  gap:18px;
-  padding:20px 0;
-  border-top:1px solid #d2cec4;
+.info-box h3{
+    margin-bottom:5px;
 }
 
-.icon{
-  width:45px;
-  height:45px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#111;
-  color:#d8a84e;
-  border-radius:50%;
-  flex-shrink:0;
+.info-box p{
+    color:#aaa;
 }
 
-.info-item h3{
-  font-family:Georgia,"Times New Roman",serif;
-  margin-bottom:5px;
+.info-box a{
+    color:#aaa;
+    text-decoration:none;
 }
 
-.info-item p{
-  color:#666;
-  line-height:1.5;
+.info-box a:hover{
+    color:#d4af37;
 }
 
 /* FORM */
 
-.form-box{
-  background:#fff;
-  padding:35px;
-  border-radius:20px;
-  box-shadow:0 15px 45px rgba(0,0,0,.08);
+.contact-form{
+    background:#191919;
+    padding:35px;
+    border-radius:18px;
+    border:1px solid #292929;
 }
 
-.form-box h3{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:30px;
-  margin-bottom:25px;
+.contact-form h2{
+    color:#d4af37;
+    margin-bottom:25px;
 }
 
-.field{
-  margin-bottom:18px;
+.form-group{
+    margin-bottom:18px;
 }
 
-.field label{
-  display:block;
-  font-size:13px;
-  font-weight:bold;
-  margin-bottom:8px;
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    color:#ddd;
 }
 
-.field input,
-.field textarea{
-  width:100%;
-  padding:14px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  outline:none;
-  font-family:Arial,sans-serif;
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:13px 15px;
+    background:#111;
+    border:1px solid #333;
+    border-radius:8px;
+    color:#fff;
+    outline:none;
 }
 
-.field input:focus,
-.field textarea:focus{
-  border-color:#d8a84e;
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:#d4af37;
 }
 
-.field textarea{
-  min-height:130px;
-  resize:vertical;
+.form-group textarea{
+    height:140px;
+    resize:vertical;
 }
 
-.submit{
-  width:100%;
-  border:none;
-  padding:16px;
-  border-radius:30px;
-  background:#111;
-  color:#fff;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.3s;
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    border:none;
+    border-radius:30px;
+    background:#d4af37;
+    color:#111;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.submit:hover{
-  background:#d8a84e;
-  color:#111;
+.btn:hover{
+    background:#fff;
+    transform:translateY(-2px);
 }
 
 /* MAP */
 
 .map-section{
-  background:#111;
-  padding:80px 7%;
+    padding:0 7% 80px;
 }
 
-.map-heading{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.map-heading small{
-  color:#d8a84e;
-  letter-spacing:3px;
-}
-
-.map-heading h2{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:45px;
-  margin-top:10px;
+.map-section h2{
+    text-align:center;
+    color:#d4af37;
+    margin-bottom:30px;
+    font-size:35px;
 }
 
 .map{
-  max-width:1150px;
-  margin:auto;
-  height:400px;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid #333;
+    max-width:1200px;
+    margin:auto;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #292929;
 }
 
 .map iframe{
-  width:100%;
-  height:100%;
-  border:0;
+    width:100%;
+    height:400px;
+    border:0;
 }
 
 /* HOURS */
 
 .hours{
-  background:#d8a84e;
-  color:#111;
-  padding:70px 7%;
+    padding:0 7% 80px;
 }
 
-.hours-grid{
-  max-width:900px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  text-align:center;
+.hours-box{
+    max-width:700px;
+    margin:auto;
+    background:#191919;
+    border:1px solid #292929;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
 }
 
-.hours h2{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:40px;
-  margin-bottom:20px;
+.hours-box h2{
+    color:#d4af37;
+    margin-bottom:20px;
 }
 
-.hours p{
-  line-height:2;
+.hours-box p{
+    color:#aaa;
+    margin:7px 0;
 }
 
 /* WHATSAPP */
 
 .whatsapp{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  z-index:500;
-  background:#25D366;
-  color:#fff;
-  padding:15px 22px;
-  border-radius:35px;
-  font-weight:bold;
-  box-shadow:0 8px 25px rgba(0,0,0,.3);
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:24px;
+    z-index:999;
 }
 
 /* FOOTER */
 
 footer{
-  text-align:center;
-  padding:45px 7%;
-  background:#050505;
+    background:#090909;
+    padding:40px 7%;
+    text-align:center;
+    border-top:1px solid #222;
+}
+
+footer .logo{
+    display:inline-block;
+    margin-bottom:15px;
+}
+
+.footer-links{
+    margin:15px 0;
+}
+
+.footer-links a{
+    color:#aaa;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+.footer-links a:hover{
+    color:#d4af37;
 }
 
 footer p{
-  color:#777;
-  margin-top:10px;
-  font-size:13px;
+    color:#777;
+    font-size:14px;
 }
 
 /* MOBILE */
 
 @media(max-width:800px){
 
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
+    .nav-links{
+        gap:12px;
+    }
 
-  .hours-grid{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
+    .nav-links a{
+        font-size:12px;
+    }
 
-  .contact{
-    padding:70px 5%;
-  }
+    .hero h1{
+        font-size:42px;
+    }
 
-  .map-section{
-    padding:70px 5%;
-  }
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    nav{
+        padding:15px 4%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:45vh;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .contact-section{
+        padding:60px 5%;
+    }
+
+    .contact-info,
+    .contact-form{
+        padding:25px;
+    }
+
+    .map-section,
+    .hours{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .map iframe{
+        height:300px;
+    }
 
 }
 
-@media(max-width:500px){
-
-  nav{
-    padding:15px 5%;
-  }
-
-  .form-box{
-    padding:25px 18px;
-  }
-
-  .contact-info h2{
-    font-size:40px;
-  }
-
-  .map{
-    height:320px;
-  }
-
-  .whatsapp{
-    right:15px;
-    bottom:15px;
-    padding:13px 17px;
-    font-size:13px;
-  }
-
-}
 </style>
 </head>
 
 <body>
 
-
 <!-- NAVBAR -->
 
 <nav>
 
-  <a href="index.html" class="logo">
-    Royal Bites
-    <span>PREMIUM DINING</span>
-  </a>
+<a href="index.html" class="logo">
+Royal Bites
+</a>
 
-  <a href="index.html" class="back">
-    ← Back Home
-  </a>
+<ul class="nav-links">
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="menu.html">Menu</a>
+</li>
+
+<li>
+<a href="about.html">About</a>
+</li>
+
+<li>
+<a href="gallery.html">Gallery</a>
+</li>
+
+<li>
+<a href="reservation.html">Reservation</a>
+</li>
+
+<li>
+<a href="contact.html" class="active">Contact</a>
+</li>
+
+</ul>
 
 </nav>
 
@@ -394,160 +424,145 @@ footer p{
 
 <section class="hero">
 
-  <div>
+<div>
 
-    <small>GET IN TOUCH</small>
+<h1>
+Contact <span>Us</span>
+</h1>
 
-    <h1>Contact Us</h1>
+<p>
+Have a question or want to reserve a table?
+We would love to hear from you.
+</p>
 
-    <p>
-      We'd love to hear from you.
-      Come visit us or get in touch.
-    </p>
-
-  </div>
+</div>
 
 </section>
 
 
 <!-- CONTACT -->
 
-<section class="contact">
+<section class="contact-section">
 
-  <div class="contact-grid">
-
-
-    <!-- INFO -->
-
-    <div class="contact-info">
-
-      <small>CONTACT DETAILS</small>
-
-      <h2>
-        Let's talk over a great meal.
-      </h2>
-
-      <p>
-        Have a question, want to plan an event,
-        or simply want to say hello?
-        Our team is here for you.
-      </p>
+<div class="contact-grid">
 
 
-      <div class="info-item">
+<!-- CONTACT INFORMATION -->
 
-        <div class="icon">📍</div>
+<div class="contact-info">
 
-        <div>
+<h2>Get In Touch</h2>
 
-          <h3>Visit Us</h3>
+<div class="info-box">
 
-          <p>
-            123 Food Street,<br>
-            Green Park, New Delhi
-          </p>
+<h3>📍 Address</h3>
 
-        </div>
+<p>
+123 Food Street,<br>
+Green Park, New Delhi
+</p>
 
-      </div>
-
-
-      <div class="info-item">
-
-        <div class="icon">📞</div>
-
-        <div>
-
-          <h3>Call Us</h3>
-
-          <p>
-            +91 99999 99999
-          </p>
-
-        </div>
-
-      </div>
+</div>
 
 
-      <div class="info-item">
+<div class="info-box">
 
-        <div class="icon">✉️</div>
+<h3>📞 Phone</h3>
 
-        <div>
+<p>
+<a href="tel:+919999999999">
++91 99999 99999
+</a>
+</p>
 
-          <h3>Email</h3>
-
-          <p>
-            hello@royalbites.com
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
+</div>
 
 
-    <!-- FORM -->
+<div class="info-box">
 
-    <div class="form-box">
+<h3>✉️ Email</h3>
 
-      <h3>Send a Message</h3>
+<p>
+<a href="mailto:hello@royalbites.com">
+hello@royalbites.com
+</a>
+</p>
 
-      <form id="contactForm">
-
-        <div class="field">
-
-          <label>Your Name</label>
-
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter your name"
-            required
-          >
-
-        </div>
+</div>
 
 
-        <div class="field">
+<div class="info-box">
 
-          <label>Email Address</label>
+<h3>🍽️ Reservations</h3>
 
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            required
-          >
+<p>
+For table reservations, please call us
+or use our online reservation form.
+</p>
 
-        </div>
+</div>
 
-
-        <div class="field">
-
-          <label>Message</label>
-
-          <textarea
-            id="message"
-            placeholder="Write your message..."
-            required>
-          </textarea>
-
-        </div>
+</div>
 
 
-        <button
-          type="submit"
-          class="submit">
-          Send Message
-        </button>
+<!-- CONTACT FORM -->
 
-      </form>
+<div class="contact-form">
 
-    </div>
+<h2>Send Us a Message</h2>
 
-  </div>
+<form onsubmit="sendMessage(event)">
+
+<div class="form-group">
+
+<label>Your Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Message</label>
+
+<textarea
+id="message"
+placeholder="Write your message..."
+required
+></textarea>
+
+</div>
+
+
+<button type="submit" class="btn">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
 
 </section>
 
@@ -556,127 +571,104 @@ footer p{
 
 <section class="map-section">
 
-  <div class="map-heading">
+<h2>Find Us</h2>
 
-    <small>FIND US</small>
+<div class="map">
 
-    <h2>Our Location</h2>
+<iframe
+src="https://www.google.com/maps?q=Green+Park,+New+Delhi&output=embed"
+loading="lazy">
+</iframe>
 
-  </div>
-
-
-  <div class="map">
-
-    <iframe
-      src="https://www.google.com/maps?q=Green%20Park%20New%20Delhi&output=embed"
-      loading="lazy">
-    </iframe>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- HOURS -->
+<!-- OPENING HOURS -->
 
 <section class="hours">
 
-  <div class="hours-grid">
+<div class="hours-box">
 
-    <div>
+<h2>Opening Hours</h2>
 
-      <h2>Opening Hours</h2>
+<p>Monday — Sunday</p>
 
-      <p>
-        Monday – Sunday<br>
-        11:00 AM – 11:00 PM
-      </p>
+<p>
+11:00 AM — 11:00 PM
+</p>
 
-    </div>
+<p>
+Kitchen closes at 10:30 PM
+</p>
 
-
-    <div>
-
-      <h2>Reservations</h2>
-
-      <p>
-        +91 99999 99999<br>
-        hello@royalbites.com
-      </p>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
-
-
-<!-- WHATSAPP -->
-
-<a
-  href="https://wa.me/919999999999"
-  target="_blank"
-  class="whatsapp">
-
-  💬 WhatsApp
-
-</a>
 
 
 <!-- FOOTER -->
 
 <footer>
 
-  <div class="logo">
-    Royal Bites
-    <span>PREMIUM DINING</span>
-  </div>
+<a href="index.html" class="logo">
+Royal Bites
+</a>
 
-  <p>
-    © 2026 Royal Bites. All rights reserved.
-  </p>
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="about.html">About</a>
+<a href="gallery.html">Gallery</a>
+<a href="reservation.html">Reservation</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
+© 2026 Royal Bites. All Rights Reserved.
+</p>
 
 </footer>
 
 
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/919999999999"
+class="whatsapp"
+target="_blank"
+>
+☎
+</a>
+
+
 <script>
 
-document
-.getElementById("contactForm")
-.addEventListener("submit", function(event){
+function sendMessage(event){
 
-  event.preventDefault();
+    event.preventDefault();
 
-  const name =
-    document.getElementById("name").value;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
 
-  const email =
-    document.getElementById("email").value;
+    let whatsappMessage =
+    "Hello Royal Bites,%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Email: " + email + "%0A%0A" +
+    "Message: " + message;
 
-  const message =
-    document.getElementById("message").value;
-
-  const subject =
-    encodeURIComponent(
-      "Website Enquiry - Royal Bites"
+    window.open(
+        "https://wa.me/919999999999?text=" + whatsappMessage,
+        "_blank"
     );
 
-  const body =
-    encodeURIComponent(
-`Name: ${name}
-
-Email: ${email}
-
-Message:
-${message}`
-    );
-
-  window.location.href =
-    `mailto:hello@royalbites.com?subject=${subject}&body=${body}`;
-
-});
+}
 
 </script>
 
 </body>
-  </html>
+</html>

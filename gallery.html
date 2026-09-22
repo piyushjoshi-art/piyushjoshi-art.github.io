@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Royal Bites</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#0b0b0b;
+  color:#fff;
+  font-family:Arial,sans-serif;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* NAVBAR */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 7%;
+  background:rgba(0,0,0,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #292929;
+}
+
+.logo{
+  font-family:Georgia,"Times New Roman",serif;
+  color:#d8a84e;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logo span{
+  display:block;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+.back{
+  border:1px solid #555;
+  padding:10px 18px;
+  border-radius:25px;
+  transition:.3s;
+}
+
+.back:hover{
+  color:#d8a84e;
+  border-color:#d8a84e;
+}
+
+/* HERO */
+
+.hero{
+  min-height:55vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:90px 7%;
+
+  background:
+  linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+  url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+  center/cover;
+}
+
+.hero small{
+  color:#d8a84e;
+  letter-spacing:4px;
+}
+
+.hero h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(55px,8vw,95px);
+  margin:15px 0;
+}
+
+.hero p{
+  color:#ccc;
+  max-width:600px;
+  margin:auto;
+  line-height:1.7;
+}
+
+/* GALLERY */
+
+.gallery-section{
+  background:#f5f1e8;
+  color:#111;
+  padding:90px 7%;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.heading small{
+  color:#9b7124;
+  letter-spacing:3px;
+}
+
+.heading h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:50px;
+  margin-top:10px;
+}
+
+/* FILTER BUTTONS */
+
+.filters{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:45px;
+}
+
+.filter{
+  border:1px solid #bbb;
+  background:transparent;
+  padding:10px 20px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.filter:hover,
+.filter.active{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+/* GRID */
+
+.gallery{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.gallery-item{
+  position:relative;
+  height:330px;
+  overflow:hidden;
+  border-radius:15px;
+  cursor:pointer;
+  background:#ddd;
+}
+
+.gallery-item.large{
+  grid-row:span 2;
+  height:678px;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.5s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.08);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  padding:25px;
+
+  background:linear-gradient(
+    transparent,
+    rgba(0,0,0,.8)
+  );
+
+  opacity:0;
+  transition:.3s;
+}
+
+.gallery-item:hover .overlay{
+  opacity:1;
+}
+
+.overlay h3{
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  background:rgba(0,0,0,.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+
+.lightbox img{
+  max-width:95%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+.close{
+  position:absolute;
+  top:25px;
+  right:35px;
+  color:white;
+  font-size:45px;
+  cursor:pointer;
+}
+
+/* CTA */
+
+.cta{
+  text-align:center;
+  padding:90px 7%;
+  background:#111;
+}
+
+.cta h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+.cta p{
+  color:#999;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  background:#d8a84e;
+  color:#111;
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:45px 7%;
+  background:#050505;
+}
+
+footer p{
+  color:#777;
+  margin-top:10px;
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery-item.large{
+    grid-row:span 1;
+    height:330px;
+  }
+
+  .gallery-item{
+    height:250px;
+  }
+
+}
+
+@media(max-width:550px){
+
+  nav{
+    padding:15

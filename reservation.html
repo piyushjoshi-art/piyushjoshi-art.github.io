@@ -54,15 +54,25 @@ nav{
   letter-spacing:3px;
 }
 
-.back{
+.nav-links{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.nav-links a{
+  font-size:14px;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:#d8a84e;
+}
+
+.home-btn{
   border:1px solid #555;
   padding:10px 18px;
   border-radius:25px;
-}
-
-.back:hover{
-  color:#d8a84e;
-  border-color:#d8a84e;
 }
 
 /* HERO */
@@ -221,8 +231,6 @@ nav{
   transform:translateY(-2px);
 }
 
-/* WHATSAPP */
-
 .whatsapp{
   display:block;
   text-align:center;
@@ -266,11 +274,354 @@ footer p{
 
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
 
   .reservation-grid{
     grid-template-columns:1fr;
   }
 
   .form-row{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
+  }
+
+  .reservation{
+    padding:70px 5%;
+  }
+}
+
+@media(max-width:500px){
+
+  nav{
+    padding:15px 5%;
+  }
+
+  .form-box{
+    padding:25px 18px;
+  }
+
+  .info h2{
+    font-size:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+  <a href="index.html" class="logo">
+    Royal Bites
+    <span>PREMIUM DINING</span>
+  </a>
+
+  <div class="nav-links">
+
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+
+  </div>
+
+  <a href="index.html" class="home-btn">
+    ← Home
+  </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div>
+
+    <small>YOUR TABLE AWAITS</small>
+
+    <h1>Reserve a Table</h1>
+
+    <p>
+      Plan your perfect dining experience with us.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- RESERVATION -->
+
+<section class="reservation">
+
+  <div class="reservation-grid">
+
+    <!-- INFORMATION -->
+
+    <div class="info">
+
+      <small>RESERVATION</small>
+
+      <h2>
+        Make your evening special.
+      </h2>
+
+      <p>
+        Choose your preferred date and time
+        and tell us a little about your visit.
+      </p>
+
+      <div class="info-box">
+
+        <strong>Opening Hours</strong>
+
+        <span>
+          Monday – Sunday<br>
+          11:00 AM – 11:00 PM
+        </span>
+
+      </div>
+
+      <div class="info-box">
+
+        <strong>Phone</strong>
+
+        <span>
+          +91 99999 99999
+        </span>
+
+      </div>
+
+      <div class="info-box">
+
+        <strong>Location</strong>
+
+        <span>
+          123 Food Street, Green Park,
+          New Delhi
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- FORM -->
+
+    <div class="form-box">
+
+      <h3>Book Your Table</h3>
+
+      <form id="bookingForm">
+
+        <div class="form-row">
+
+          <div class="field">
+
+            <label>Your Name</label>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              required
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label>Phone Number</label>
+
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Enter phone number"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="field">
+
+            <label>Date</label>
+
+            <input
+              type="date"
+              id="date"
+              required
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label>Time</label>
+
+            <select id="time" required>
+
+              <option value="">Select time</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>5:00 PM</option>
+              <option>6:00 PM</option>
+              <option>7:00 PM</option>
+              <option>8:00 PM</option>
+              <option>9:00 PM</option>
+              <option>10:00 PM</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Number of Guests</label>
+
+          <select id="guests" required>
+
+            <option value="">Select guests</option>
+            <option>1 Guest</option>
+            <option>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4 Guests</option>
+            <option>5 Guests</option>
+            <option>6 Guests</option>
+            <option>7 Guests</option>
+            <option>8 Guests</option>
+            <option>9+ Guests</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Special Request</label>
+
+          <textarea
+            id="request"
+            placeholder="Birthday, anniversary, window seat, etc."></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit">
+
+          Request Reservation
+
+        </button>
+
+      </form>
+
+
+      <a
+        href="https://wa.me/919999999999"
+        target="_blank"
+        class="whatsapp">
+
+        💬 Contact us on WhatsApp
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="note">
+
+    <strong>Demo Note:</strong>
+    The reservation form currently sends the booking
+    details to WhatsApp. The restaurant owner's real
+    WhatsApp number can be added later.
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="logo">
+    Royal Bites
+    <span>PREMIUM DINING</span>
+  </div>
+
+  <p>
+    © 2026 Royal Bites. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+document
+.getElementById("bookingForm")
+.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+  const name =
+    document.getElementById("name").value;
+
+  const phone =
+    document.getElementById("phone").value;
+
+  const date =
+    document.getElementById("date").value;
+
+  const time =
+    document.getElementById("time").value;
+
+  const guests =
+    document.getElementById("guests").value;
+
+  const request =
+    document.getElementById("request").value;
+
+  const message =
+`Hello Royal Bites! I would like to request a table reservation.
+
+Name: ${name}
+Phone: ${phone}
+Date: ${date}
+Time: ${time}
+Guests: ${guests}
+Special Request: ${request || "None"}`;
+
+  const whatsappURL =
+    "https://wa.me/919999999999?text="
+    + encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>

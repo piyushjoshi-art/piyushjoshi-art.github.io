@@ -5,342 +5,481 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>About Us | Royal Bites</title>
+<meta name="description" content="Learn about Royal Bites, our story, values, chefs and passion for great food.">
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:Georgia,"Times New Roman",serif;
-  background:#0b0b0b;
-  color:#fff;
+    background:#111;
+    color:#fff;
+    line-height:1.6;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
+/* NAVBAR */
 
 nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 7%;
-  background:rgba(0,0,0,.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #292929;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(15,15,15,.96);
+    backdrop-filter:blur(10px);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(212,175,55,.2);
 }
 
 .logo{
-  color:#d8a84e;
-  font-size:25px;
-  font-weight:bold;
+    color:#d4af37;
+    text-decoration:none;
+    font-size:25px;
+    font-weight:bold;
 }
 
-.logo span{
-  display:block;
-  color:#fff;
-  font-family:Arial,sans-serif;
-  font-size:9px;
-  letter-spacing:3px;
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
 }
 
-.back{
-  font-family:Arial,sans-serif;
-  border:1px solid #555;
-  padding:10px 18px;
-  border-radius:25px;
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
 }
 
-.back:hover{
-  color:#d8a84e;
-  border-color:#d8a84e;
+.nav-links a:hover,
+.nav-links .active{
+    color:#d4af37;
 }
 
 /* HERO */
 
 .hero{
-  min-height:65vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:100px 7%;
-  background:
-  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
-  url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
-  center/cover;
-}
-
-.hero small{
-  color:#d8a84e;
-  font-family:Arial,sans-serif;
-  letter-spacing:4px;
+    min-height:55vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
 }
 
 .hero h1{
-  font-size:clamp(50px,7vw,90px);
-  margin:15px 0;
+    font-size:58px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#d4af37;
 }
 
 .hero p{
-  max-width:600px;
-  margin:auto;
-  color:#ccc;
-  font-family:Arial,sans-serif;
+    color:#ddd;
+    font-size:18px;
 }
 
 /* STORY */
 
 .story{
-  background:#f5f1e8;
-  color:#111;
-  padding:100px 7%;
+    padding:90px 7%;
 }
 
 .story-grid{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
 }
 
-.story-image{
-  min-height:550px;
-  border-radius:20px;
-  background:
-  url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=85")
-  center/cover;
+.story-image img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:20px;
 }
 
-.story-text small{
-  color:#9b7124;
-  font-family:Arial,sans-serif;
-  letter-spacing:3px;
+.story-content h2{
+    color:#d4af37;
+    font-size:40px;
+    margin-bottom:20px;
 }
 
-.story-text h2{
-  font-size:clamp(40px,5vw,65px);
-  line-height:1;
-  margin:15px 0 25px;
+.story-content p{
+    color:#aaa;
+    margin-bottom:18px;
 }
 
-.story-text p{
-  font-family:Arial,sans-serif;
-  color:#555;
-  margin-bottom:20px;
+.gold-line{
+    width:70px;
+    height:3px;
+    background:#d4af37;
+    margin-bottom:25px;
 }
 
 /* VALUES */
 
 .values{
-  padding:100px 7%;
-  background:#0b0b0b;
+    padding:90px 7%;
+    background:#0d0d0d;
 }
 
-.heading{
-  text-align:center;
-  margin-bottom:50px;
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
 }
 
-.heading small{
-  color:#d8a84e;
-  font-family:Arial,sans-serif;
-  letter-spacing:3px;
+.section-title h2{
+    color:#d4af37;
+    font-size:40px;
+    margin-bottom:10px;
 }
 
-.heading h2{
-  font-size:50px;
-  margin-top:10px;
+.section-title p{
+    color:#888;
 }
 
 .value-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.card{
-  padding:35px 25px;
-  background:#151515;
-  border:1px solid #292929;
-  border-radius:18px;
-  text-align:center;
-  transition:.3s;
+.value-card{
+    background:#191919;
+    padding:35px 25px;
+    text-align:center;
+    border-radius:18px;
+    border:1px solid #292929;
+    transition:.3s;
 }
 
-.card:hover{
-  transform:translateY(-7px);
-  border-color:#d8a84e;
+.value-card:hover{
+    transform:translateY(-7px);
+    border-color:#d4af37;
 }
 
-.icon{
-  font-size:38px;
-  margin-bottom:15px;
+.value-icon{
+    font-size:38px;
+    margin-bottom:15px;
 }
 
-.card h3{
-  font-size:24px;
-  margin-bottom:10px;
+.value-card h3{
+    color:#fff;
+    margin-bottom:10px;
 }
 
-.card p{
-  color:#999;
-  font-family:Arial,sans-serif;
-  font-size:14px;
+.value-card p{
+    color:#999;
 }
 
 /* CHEF */
 
 .chef{
-  padding:100px 7%;
-  background:#151515;
+    padding:90px 7%;
 }
 
 .chef-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:350px 1fr;
-  gap:60px;
-  align-items:center;
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
 }
 
-.chef-image{
-  height:430px;
-  border-radius:20px;
-  background:
-  url("https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=900&q=85")
-  center/cover;
+.chef-image img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:20px;
 }
 
-.chef-text small{
-  color:#d8a84e;
-  font-family:Arial,sans-serif;
-  letter-spacing:3px;
+.chef-content h2{
+    color:#d4af37;
+    font-size:38px;
+    margin-bottom:18px;
 }
 
-.chef-text h2{
-  font-size:48px;
-  margin:12px 0 20px;
+.chef-content h3{
+    margin-bottom:18px;
 }
 
-.chef-text p{
-  color:#aaa;
-  font-family:Arial,sans-serif;
-  margin-bottom:20px;
+.chef-content p{
+    color:#aaa;
+    margin-bottom:15px;
 }
 
 /* STATS */
 
 .stats{
-  padding:70px 7%;
-  background:#d8a84e;
-  color:#111;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+    padding:80px 7%;
 }
 
 .stats-grid{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  text-align:center;
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
 }
 
-.stat strong{
-  display:block;
-  font-size:42px;
+.stat h2{
+    color:#d4af37;
+    font-size:40px;
 }
 
-.stat span{
-  font-family:Arial,sans-serif;
-  font-size:13px;
+.stat p{
+    color:#ddd;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:90px 7%;
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#aaa;
+    max-width:650px;
+    margin:0 auto 25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 27px;
+    background:#d4af37;
+    color:#111;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    transform:translateY(-3px);
 }
 
 /* FOOTER */
 
 footer{
-  text-align:center;
-  padding:45px 7%;
-  background:#050505;
+    background:#090909;
+    padding:40px 7%;
+    text-align:center;
+    border-top:1px solid #222;
+}
+
+footer .logo{
+    display:inline-block;
+    margin-bottom:15px;
+}
+
+.footer-links{
+    margin:15px 0;
+}
+
+.footer-links a{
+    color:#aaa;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+.footer-links a:hover{
+    color:#d4af37;
 }
 
 footer p{
-  color:#777;
-  font-family:Arial,sans-serif;
-  font-size:13px;
-  margin-top:10px;
+    color:#777;
+    font-size:14px;
 }
 
-@media(max-width:800px){
+/* WHATSAPP */
 
-  .story-grid,
-  .chef-grid{
-    grid-template-columns:1fr;
-  }
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:24px;
+    z-index:999;
+}
 
-  .value-grid{
-    grid-template-columns:1fr;
-  }
+/* TABLET */
 
-  .stats-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
-  }
+@media(max-width:900px){
 
-  .story-image{
-    min-height:350px;
-  }
+    .nav-links{
+        gap:12px;
+    }
 
-  .chef-image{
-    height:350px;
-  }
+    .nav-links a{
+        font-size:12px;
+    }
+
+    .story-grid,
+    .chef-grid{
+        grid-template-columns:1fr;
+    }
+
+    .value-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+        gap:35px;
+    }
 
 }
 
-@media(max-width:500px){
+/* MOBILE */
 
-  nav{
-    padding:15px 5%;
-  }
+@media(max-width:600px){
 
-  .story,
-  .values,
-  .chef{
-    padding:70px 5%;
-  }
+    nav{
+        padding:15px 4%;
+    }
 
-  .heading h2{
-    font-size:40px;
-  }
+    .logo{
+        font-size:20px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:45vh;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .story,
+    .values,
+    .chef,
+    .cta{
+        padding:65px 5%;
+    }
+
+    .story-content h2,
+    .chef-content h2,
+    .section-title h2,
+    .cta h2{
+        font-size:30px;
+    }
+
+    .story-image img,
+    .chef-image img{
+        height:350px;
+    }
+
+    .value-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        padding:65px 5%;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat h2{
+        font-size:30px;
+    }
 
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- NAVBAR -->
+
 <nav>
 
-  <a href="index.html" class="logo">
-    Royal Bites
-    <span>PREMIUM DINING</span>
-  </a>
+<a href="index.html" class="logo">
+Royal Bites
+</a>
 
-  <a href="index.html" class="back">
-    ← Back Home
-  </a>
+<ul class="nav-links">
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="menu.html">Menu</a>
+</li>
+
+<li>
+<a href="about.html" class="active">About</a>
+</li>
+
+<li>
+<a href="gallery.html">Gallery</a>
+</li>
+
+<li>
+<a href="reservation.html">Reservation</a>
+</li>
+
+<li>
+<a href="contact.html">Contact</a>
+</li>
+
+</ul>
 
 </nav>
 
@@ -349,17 +488,17 @@ footer p{
 
 <section class="hero">
 
-  <div>
+<div>
 
-    <small>OUR STORY</small>
+<h1>
+Our <span>Story</span>
+</h1>
 
-    <h1>About Royal Bites</h1>
+<p>
+Passion, tradition and unforgettable flavours.
+</p>
 
-    <p>
-      Where traditional flavours meet modern hospitality.
-    </p>
-
-  </div>
+</div>
 
 </section>
 
@@ -368,36 +507,44 @@ footer p{
 
 <section class="story">
 
-  <div class="story-grid">
+<div class="story-grid">
 
-    <div class="story-image"></div>
+<div class="story-image">
 
-    <div class="story-text">
+<img
+src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=85"
+alt="Royal Bites restaurant"
+>
 
-      <small>OUR JOURNEY</small>
+</div>
 
-      <h2>Food made with heart.</h2>
 
-      <p>
-        Royal Bites was created with one simple idea:
-        great food should bring people together.
-      </p>
+<div class="story-content">
 
-      <p>
-        Our kitchen combines traditional recipes, carefully
-        selected ingredients and modern presentation to create
-        a memorable dining experience.
-      </p>
+<div class="gold-line"></div>
 
-      <p>
-        Whether you're joining us for a family dinner,
-        a celebration or simply a great meal, we want every
-        visit to feel special.
-      </p>
+<h2>More Than Just A Restaurant</h2>
 
-    </div>
+<p>
+Royal Bites was created with one simple idea —
+to bring delicious food, beautiful ambience and warm hospitality
+together under one roof.
+</p>
 
-  </div>
+<p>
+From carefully selected ingredients to thoughtfully prepared dishes,
+every detail is designed to make your visit special.
+</p>
+
+<p>
+Whether you're enjoying a family dinner, celebrating a special
+occasion or simply meeting friends, Royal Bites is a place where
+great memories are made.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -406,58 +553,63 @@ footer p{
 
 <section class="values">
 
-  <div class="heading">
+<div class="section-title">
 
-    <small>WHAT WE BELIEVE</small>
+<h2>What We Believe In</h2>
 
-    <h2>Our Values</h2>
+<p>
+The values behind everything we serve.
+</p>
 
-  </div>
-
-  <div class="value-grid">
-
-    <div class="card">
-
-      <div class="icon">🌿</div>
-
-      <h3>Fresh Ingredients</h3>
-
-      <p>
-        We carefully select quality ingredients
-        for every dish we serve.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="card">
-
-      <div class="icon">👨‍🍳</div>
-
-      <h3>Authentic Recipes</h3>
-
-      <p>
-        Traditional flavours prepared with
-        passion and attention to detail.
-      </p>
-
-    </div>
+<div class="value-grid">
 
 
-    <div class="card">
+<div class="value-card">
 
-      <div class="icon">❤️</div>
+<div class="value-icon">🥬</div>
 
-      <h3>Guest First</h3>
+<h3>Fresh Ingredients</h3>
 
-      <p>
-        Your comfort, experience and happiness
-        are at the heart of everything we do.
-      </p>
+<p>
+We believe great food starts with fresh and carefully selected
+ingredients.
+</p>
 
-    </div>
+</div>
 
-  </div>
+
+<div class="value-card">
+
+<div class="value-icon">👨‍🍳</div>
+
+<h3>Authentic Recipes</h3>
+
+<p>
+Our recipes combine traditional flavours with a modern dining
+experience.
+</p>
+
+</div>
+
+
+<div class="value-card">
+
+<div class="value-icon">❤️</div>
+
+<h3>Guest First</h3>
+
+<p>
+Every guest deserves delicious food, friendly service and a
+memorable experience.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
@@ -466,29 +618,41 @@ footer p{
 
 <section class="chef">
 
-  <div class="chef-grid">
+<div class="chef-grid">
 
-    <div class="chef-image"></div>
 
-    <div class="chef-text">
+<div class="chef-image">
 
-      <small>OUR KITCHEN</small>
+<img
+src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1200&q=85"
+alt="Royal Bites chef"
+>
 
-      <h2>Meet Our Chef</h2>
+</div>
 
-      <p>
-        Our culinary team brings years of experience,
-        creativity and passion into every plate.
-      </p>
 
-      <p>
-        From classic favourites to our signature dishes,
-        every recipe is prepared with care and served fresh.
-      </p>
+<div class="chef-content">
 
-    </div>
+<div class="gold-line"></div>
 
-  </div>
+<h2>Meet Our Chef</h2>
+
+<h3>Chef Arjun Sharma</h3>
+
+<p>
+With years of experience and a passion for creating memorable
+dishes, Chef Arjun brings creativity and tradition together in
+every plate.
+</p>
+
+<p>
+His philosophy is simple: use quality ingredients, respect the
+recipe and let the natural flavours shine.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -497,45 +661,108 @@ footer p{
 
 <section class="stats">
 
-  <div class="stats-grid">
+<div class="stats-grid">
 
-    <div class="stat">
-      <strong>10+</strong>
-      <span>Years of Experience</span>
-    </div>
 
-    <div class="stat">
-      <strong>50K+</strong>
-      <span>Happy Guests</span>
-    </div>
+<div class="stat">
 
-    <div class="stat">
-      <strong>40+</strong>
-      <span>Signature Dishes</span>
-    </div>
+<h2>10+</h2>
 
-    <div class="stat">
-      <strong>4.9★</strong>
-      <span>Guest Rating</span>
-    </div>
+<p>Years of Experience</p>
 
-  </div>
+</div>
+
+
+<div class="stat">
+
+<h2>50K+</h2>
+
+<p>Happy Guests</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>40+</h2>
+
+<p>Signature Dishes</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>4.9★</h2>
+
+<p>Guest Rating</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Ready For A Delicious Experience?</h2>
+
+<p>
+Explore our menu or reserve your table and discover what makes
+Royal Bites special.
+</p>
+
+<a href="menu.html" class="btn">
+Explore Menu
+</a>
+
+<a href="reservation.html" class="btn">
+Reserve Table
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
 <footer>
 
-  <div class="logo">
-    Royal Bites
-    <span>PREMIUM DINING</span>
-  </div>
+<a href="index.html" class="logo">
+Royal Bites
+</a>
 
-  <p>
-    © 2026 Royal Bites. All rights reserved.
-  </p>
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="about.html">About</a>
+<a href="gallery.html">Gallery</a>
+<a href="reservation.html">Reservation</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
+© 2026 Royal Bites. All Rights Reserved.
+</p>
 
 </footer>
 
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/919999999999"
+class="whatsapp"
+target="_blank"
+>
+☎
+</a>
+
+
 </body>
-  </html>
+</html>

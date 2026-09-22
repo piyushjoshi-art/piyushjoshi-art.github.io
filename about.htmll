@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Royal Bites</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:#0b0b0b;
+  color:#fff;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 7%;
+  background:rgba(0,0,0,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #292929;
+}
+
+.logo{
+  color:#d8a84e;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logo span{
+  display:block;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+.back{
+  font-family:Arial,sans-serif;
+  border:1px solid #555;
+  padding:10px 18px;
+  border-radius:25px;
+}
+
+.back:hover{
+  color:#d8a84e;
+  border-color:#d8a84e;
+}
+
+/* HERO */
+
+.hero{
+  min-height:65vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 7%;
+  background:
+  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
+  url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
+  center/cover;
+}
+
+.hero small{
+  color:#d8a84e;
+  font-family:Arial,sans-serif;
+  letter-spacing:4px;
+}
+
+.hero h1{
+  font-size:clamp(50px,7vw,90px);
+  margin:15px 0;
+}
+
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:#ccc;
+  font-family:Arial,sans-serif;
+}
+
+/* STORY */
+
+.story{
+  background:#f5f1e8;
+  color:#111;
+  padding:100px 7%;
+}
+
+.story-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.story-image{
+  min-height:550px;
+  border-radius:20px;
+  background:
+  url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=85")
+  center/cover;
+}
+
+.story-text small{
+  color:#9b7124;
+  font-family:Arial,sans-serif;
+  letter-spacing:3px;
+}
+
+.story-text h2{
+  font-size:clamp(40px,5vw,65px);
+  line-height:1;
+  margin:15px 0 25px;
+}
+
+.story-text p{
+  font-family:Arial,sans-serif;
+  color:#555;
+  margin-bottom:20px;
+}
+
+/* VALUES */
+
+.values{
+  padding:100px 7%;
+  background:#0b0b0b;
+}
+
+.heading{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.heading small{
+  color:#d8a84e;
+  font-family:Arial,sans-serif;
+  letter-spacing:3px;
+}
+
+.heading h2{
+  font-size:50px;
+  margin-top:10px;
+}
+
+.value-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  padding:35px 25px;
+  background:#151515;
+  border:1px solid #292929;
+  border-radius:18px;
+  text-align:center;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#d8a84e;
+}
+
+.icon{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#999;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+}
+
+/* CHEF */
+
+.chef{
+  padding:100px 7%;
+  background:#151515;
+}
+
+.chef-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:350px 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.chef-image{
+  height:430px;
+  border-radius:20px;
+  background:
+  url("https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=900&q=85")
+  center/cover;
+}
+
+.chef-text small{
+  color:#d8a84e;
+  font-family:Arial,sans-serif;
+  letter-spacing:3px;
+}
+
+.chef-text h2{
+  font-size:48px;
+  margin:12px 0 20px;
+}
+
+.chef-text p{
+  color:#aaa;
+  font-family:Arial,sans-serif;
+  margin-bottom:20px;
+}
+
+/* STATS */
+
+.stats{
+  padding:70px 7%;
+  background:#d8a84e;
+  color:#111;
+}
+
+.stats-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  font-size:42px;
+}
+
+.stat span{
+  font-family:Arial,sans-serif;
+  font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:45px 7%;
+  background:#050505;
+}
+
+footer p{
+  color:#777;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  margin-top:10px;
+}
+
+@media(max-width:800px){
+
+  .story-grid,
+  .chef-grid{
+    grid-template-columns:1fr;
+  }
+
+  .value-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+  }
+
+  .story-image{
+    min-height:350px;
+  }
+
+  .chef-image{
+    height:350px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  nav{
+    padding:15px 5%;
+  }
+
+  .story,
+  .values,
+  .chef{
+    padding:70px 5%;
+  }
+
+  .heading h2{
+    font-size:40px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+  <a href="index.html" class="logo">
+    Royal Bites
+    <span>PREMIUM DINING</span>
+  </a>
+
+  <a href="index.html" class="back">
+    ← Back Home
+  </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div>
+
+    <small>OUR STORY</small>
+
+    <h1>About Royal Bites</h1>
+
+    <p>
+      Where traditional flavours meet modern hospitality.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section class="story">
+
+  <div class="story-grid">
+
+    <div class="story-image"></div>
+
+    <div class="story-text">
+
+      <small>OUR JOURNEY</small>
+
+      <h2>Food made with heart.</h2>
+
+      <p>
+        Royal Bites was created with one simple idea:
+        great food should bring people together.
+      </p>
+
+      <p>
+        Our kitchen combines traditional recipes, carefully
+        selected ingredients and modern presentation to create
+        a memorable dining experience.
+      </p>
+
+      <p>
+        Whether you're joining us for a family dinner,
+        a celebration or simply a great meal, we want every
+        visit to feel special.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- VALUES -->
+
+<section class="values">
+
+  <div class="heading">
+
+    <small>WHAT WE BELIEVE</small>
+
+    <h2>Our Values</h2>
+
+  </div>
+
+  <div class="value-grid">
+
+    <div class="card">
+
+      <div class="icon">🌿</div>
+
+      <h3>Fresh Ingredients</h3>
+
+      <p>
+        We carefully select quality ingredients
+        for every dish we serve.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">👨‍🍳</div>
+
+      <h3>Authentic Recipes</h3>
+
+      <p>
+        Traditional flavours prepared with
+        passion and attention to detail.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">❤️</div>
+
+      <h3>Guest First</h3>
+
+      <p>
+        Your comfort, experience and happiness
+        are at the heart of everything we do.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CHEF -->
+
+<section class="chef">
+
+  <div class="chef-grid">
+
+    <div class="chef-image"></div>
+
+    <div class="chef-text">
+
+      <small>OUR KITCHEN</small>
+
+      <h2>Meet Our Chef</h2>
+
+      <p>
+        Our culinary team brings years of experience,
+        creativity and passion into every plate.
+      </p>
+
+      <p>
+        From classic favourites to our signature dishes,
+        every recipe is prepared with care and served fresh.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+  <div class="stats-grid">
+
+    <div class="stat">
+      <strong>10+</strong>
+      <span>Years of Experience</span>
+    </div>
+
+    <div class="stat">
+      <strong>50K+</strong>
+      <span>Happy Guests</span>
+    </div>
+
+    <div class="stat">
+      <strong>40+</strong>
+      <span>Signature Dishes</span>
+    </div>
+
+    <div class="stat">
+      <strong>4.9★</strong>
+      <span>Guest Rating</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="logo">
+    Royal Bites
+    <span>PREMIUM DINING</span>
+  </div>
+
+  <p>
+    © 2026 Royal Bites. All rights reserved.
+  </p>
+
+</footer>
+
+</body>
+  </html>
